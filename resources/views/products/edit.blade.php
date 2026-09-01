@@ -26,10 +26,11 @@
         <label>メーカー名＊</label>
      <select name="company_id">
         @foreach ($companies as $company)
-        <option value="{{ $company ->id }}"
-        {{ old('company_id', $product->company_id) == $company->id ? 'selected' : '' }}
-        </option>
-        @endforeach
+    <option value="{{ $company->id }}"
+        {{ old('company_id', $product->company_id) == $company->id ? 'selected' : '' }}>
+        {{ $company->company_name }}
+    </option>
+@endforeach
     </select>
     <label>商品画像</label>
     <input type="file" name="img_path">
