@@ -56,9 +56,10 @@
             <a href="{{ route('products.show', $product->id) }}">詳細</a>
         </td>
         <td>
-            <form action="{{ route('products.destroy', $product->id) }}" method="POST">
-                @csrf
-                @method('DELETE')
+            <form action="{{ route('products.destroy', $product->id) }}" method="POST"
+                  onsubmit="return confirm('本当に削除しますか？');">
+                  @csrf
+                  @method('DELETE')
                 <button type="submit">削除</button>
             </form>
         </td>

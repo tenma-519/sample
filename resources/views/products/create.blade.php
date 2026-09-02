@@ -9,7 +9,7 @@
         @endforeach
     </ul>
 @endif
-<form action="/sample/public/products" method="POST" enctype="multipart/form-data">
+<form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <label>商品名＊</label>
