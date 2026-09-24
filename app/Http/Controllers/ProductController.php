@@ -16,7 +16,13 @@ public function index(Request $request) {
 
     $products = $productModel->getProductsBySearch(
         $request->keyword,
-        $request->company_id
+        $request->company_id,
+        $request->min_price,
+        $request->max_price,
+        $request->min_stock,
+        $request->max_stock,
+        $request->input('sort', 'id'),
+        $request->input('direction','desc')
     );
 
     $companyModel = new Company();

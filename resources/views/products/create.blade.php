@@ -24,8 +24,9 @@
     <label>コメント</label>
     <input type="text" name="comment" value="{{ old('comment')}}">
 
-    <label>メーカー名＊</label>
+   <label>メーカー名＊</label>
 <select name="company_id">
+    <option value="">選択してください</option>
     @foreach ($companies as $company)
         <option value="{{ $company->id }}"
             {{ old('company_id') == $company->id ? 'selected' : '' }}>
